@@ -15,8 +15,10 @@ def prodTag     = "0.0"
 pipeline {
   agent {
     // Using the Jenkins Agent Pod that we defined earlier
-    label "maven-appdev"
-    customWorkspace "undertow-servlet"
+    node {
+      label "maven-appdev"
+      customWorkspace "undertow-servlet"
+    }
   }
   stages {
     // Checkout Source Code and calculate Version Numbers and Tags
