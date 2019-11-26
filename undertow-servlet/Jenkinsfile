@@ -46,7 +46,7 @@ pipeline {
     stage('Build War File') {
       steps {
         echo "Building version ${devTag}"
-
+        sh "mvn clean package"
         // TBD
 
       }
