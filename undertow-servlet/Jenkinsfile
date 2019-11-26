@@ -28,6 +28,7 @@ pipeline {
        checkout scm
 
        script {
+          sh ls
           def pom = readMavenPom file: 'pom.xml'
           def version = pom.version
 
