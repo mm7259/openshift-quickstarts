@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "MEWMEWMEWMW"
 # Command line arguments given to this script
 args="$*"
 
@@ -25,6 +26,7 @@ fi
 export JAVA_OPTS
 export JAVA_OPTIONS="$JAVA_OPTS"
 
+echo "MEWMEWMEWMEWMWEMWWMWM"
 if [ -f "${S2I_TARGET_DEPLOYMENTS_DIR}/bin/run.sh" ]; then
     echo "Starting the application using the bundled ${S2I_TARGET_DEPLOYMENTS_DIR}/bin/run.sh ..."
     exec ${DEPLOYMENTS_DIR}/bin/run.sh $args ${JAVA_ARGS}
