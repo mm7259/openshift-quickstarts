@@ -24,4 +24,11 @@ fi
 export JAVA_OPTS
 export JAVA_OPTIONS="$JAVA_OPTS"
 
-
+touch ~/random_file
+if [ -f "${S2I_TARGET_DEPLOYMENTS_DIR}/bin/run.sh" ]; then
+    echo "Starting the application using the bundled ${S2I_TARGET_DEPLOYMENTS_DIR}/bin/run.sh ..."
+    exec ${DEPLOYMENTS_DIR}/bin/run.sh $args ${JAVA_ARGS}
+else
+    echo "Starting the Java application using ${JBOSS_CONTAINER_JAVA_RUN_MODULE}/run-java.sh $args..."
+    exec "${JBOSS_CONTAINER_JAVA_RUN_MODULE}/run-java.sh" $args ${JAVA_ARGS}
+fi
