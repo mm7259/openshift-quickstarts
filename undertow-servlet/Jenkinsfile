@@ -1,3 +1,10 @@
+library identifier: "pipeline-library@master",
+retriever: modernSCM(
+    [
+        $class: "GitSCMSource",
+        remote: "https://github.com/redhat-cop/pipeline-library.git"
+    ]    
+)
 // Set your project Prefix using your GUID
 def prefix      = "openjdk"
 
@@ -24,8 +31,6 @@ pipeline {
     // Checkout Source Code and calculate Version Numbers and Tags
     stage('Checkout Source') {
       steps {
-       git url: "https://github.com/mm7259/openshift-quickstarts.git"
-       checkout scm
        git (
                     branch: "master",
                     url: "ssh://git@bitbucket.anthem.com:7999/rxsmart/rxsmart.git"
