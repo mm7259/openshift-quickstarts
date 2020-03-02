@@ -33,7 +33,7 @@ pipeline {
       steps {
        git (
                     branch: "master",
-                    url: "ssh://git@bitbucket.anthem.com:7999/rxsmart/rxsmart.git"
+                    url: "https://github.com/mm7259/openshift-quickstarts.git"
                )
 
        script {
