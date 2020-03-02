@@ -26,6 +26,10 @@ pipeline {
       steps {
        git url: "https://github.com/mm7259/openshift-quickstarts.git"
        checkout scm
+       git (
+                    branch: "master",
+                    url: "ssh://git@bitbucket.anthem.com:7999/rxsmart/rxsmart.git"
+               )
 
        script {
           def pom = readMavenPom file: './undertow-servlet/pom.xml'
